@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Information</h1>
+    <Child  :user="user" :getItem="getItem" ></Child>
     <h3>Name -> {{ name }}</h3>
     <h3>ID -> {{ id }}</h3>
     <h3>ID -> {{ (id = "18101071") }}</h3>
@@ -41,8 +42,10 @@
   </div>
 </template>
 <script>
+import Child from './ChildCom.vue'
 export default {
   name: "HomePage",
+  components : {  Child },
   data() {
     return {
       name: "Anik Das",
@@ -54,6 +57,10 @@ export default {
       technology: [],
       show: true,
       arr: ["CSE","EEE","ME","BBA"],
+      user : {
+        email : "a@gmail.com",
+        pass : "secret",
+      }
     };
   },
   methods: {
@@ -65,6 +72,9 @@ export default {
     },
     getData(){
       console.log("Data:", this.phone,this.password)
+    },
+    getItem(){
+      console.log("Parent Function called");
     }
   },
 };
