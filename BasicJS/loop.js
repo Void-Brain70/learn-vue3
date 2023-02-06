@@ -7,12 +7,12 @@ let dept = ['CSE','EEE','ME','BBA','IR','LAW','CE','CHE'];
 //     console.log(el);
 // }
 
-//forEach loop
+//forEach() used for array loop
 // dept.forEach(el=>{
 //     console.log(el);
 // })
 
-//for of
+//for of 
 // for(let i of dept){
 //     console.log(i);
 // }
