@@ -14,4 +14,7 @@ let d = date.getDay(); //0-SUN 1-MON 2-TUE 3-WED 4-THU 5-FRI 6-SAT
 let t = date.getTime();
 let h = date.getHours();
 
+let love = new Date(2022, 5, 5);
+console.log(love.getUTCMonth())
+
 console.log(y,m,d,t,h);

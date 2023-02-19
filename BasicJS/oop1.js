@@ -9,9 +9,11 @@ function personInfo(name,phone,date_of_birth){
     }
 }
 
-const info = new personInfo("Anik Das",'01626838003', '1998-08-18');
-console.log(info.ageCalculate());
+const info = new personInfo("Anik Das",'01626838003', '2006-3-27');
+console.log("information->",info.ageCalculate());
 
+let love = new Date(2022, 05, 5).getUTCMonth() - 2;
+console.log(love)
 
 function playerInfo(name,club,national_team,goal){
     this.name = name;
