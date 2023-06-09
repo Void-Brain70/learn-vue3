@@ -20,16 +20,40 @@
     <br>
     <br>
     <p>Has published books: {{ publishedBooks }}</p>
+    <br>
+    <div :class="isActive ? 'primary': 'info'">
+      <img :src="img" />
+    </div>
+    <div :class="{ 'text-ok': isActive, 'text-danger': hasError}">
+      I am anik, I am CSE student, and now i am a software engineer
+    </div>
+    <div>
+      <p>Template Ref</p>
+      <input type="text" ref="input">
+    </div>
+    <div>
+      <button @click="showModal=true">Show Modal</button>
+      <div v-if="showModal">
+        <h1>Anik Das</h1>
+        <button @click="showModal=false" >Hide Modal</button>
+      </div>
+    </div> 
   </div>
 </template>
 
 <script setup>
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, onMounted, reactive, ref, watch } from 'vue'
 
 //Data define ref and reactive
+let isActive =ref(true)
+let hasError= ref(true )
+
+let img =  ref('https//picsum.photos/200')
+
 let count = ref(0);
 let m = ref(0)
 count.value= 10
+
 let info = reactive({
   name: 'Anik Chandra',
   id: 18101070,
@@ -42,6 +66,10 @@ const author = reactive({
     'Vue 1', 'Vue 2', 'Vue 3'
   ]
 })
+
+let input = ref(null);
+
+let showModal = ref(false);
 
 //Methods
 const increment = n => m.value += n;
@@ -78,4 +106,29 @@ watch(()=> m.value, ( newvalue, oldvalue) => {
   }
 })
 
+onMounted(()=> {
+  input.value.focus();
+})
+
 </script>
+
+<style scoped>
+
+.primary{
+  background-color: aqua;
+}
+
+.info{
+  background-color: blueviolet;
+}
+
+.text-ok{
+  color:indigo;
+  font-size: 18px;
+}
+
+.text-danger{
+  color:indianred;
+  font-size: 16px;
+}
+</style>
