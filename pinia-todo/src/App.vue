@@ -5,6 +5,11 @@
       <img src="https://pinia.vuejs.org/logo.svg" alt="pinia logo">
       <h1>Pinia Todo</h1>
     </header>
+
+    <!-- New Todo  -->
+    <div class="new-todo-form">
+      <todo-form />
+    </div>
     
     <!-- Filter List  -->
     <nav class="filter-list">
@@ -34,6 +39,7 @@
 import { ref } from 'vue';
 import TodoDetails from './components/TodoDetails.vue';
 import { useTodoStore } from './store/todo';
+import TodoForm from './components/TodoForm.vue';
 
 const todoInfo = useTodoStore();
 

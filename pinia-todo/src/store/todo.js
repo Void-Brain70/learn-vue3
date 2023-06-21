@@ -21,5 +21,19 @@ export const useTodoStore = defineStore('todo',{
         totalCount: (state)=> {
             return state.todo.length
         }
+    },
+    action: {
+       addTodo(todo){
+        this.todo.push(todo)
+       },
+       deleteTodo(id){
+         this.todo = this.todo.filter(t=>{
+            return t.id != id
+         })
+       },
+       toggleFav(id){
+         const task = this.todo.find(t => t.id === id)
+         task.fav = !task.fav
+       }       
     }
 })
