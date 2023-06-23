@@ -12,7 +12,7 @@
 import { ref } from 'vue';
 import { useTodoStore } from '../store/todo';
 
-const {addTodo} = useTodoStore();
+const todoStore = useTodoStore();
 const newTodo = ref('');
 
 const handleSubmit = () => {
@@ -23,9 +23,8 @@ const handleSubmit = () => {
         id: Math.floor(Math.random() * 10000)
     }
     if (newTodo.value.length > 0) {
-        addTodo(fromData)
+        todoStore.addTodo(fromData)
         newTodo.value = ''
-        console.log(dataStore)
     }
 }
 

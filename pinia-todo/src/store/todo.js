@@ -22,7 +22,7 @@ export const useTodoStore = defineStore('todo',{
             return state.todo.length
         }
     },
-    action: {
+    actions: {
        addTodo(todo){
         this.todo.push(todo)
        },
