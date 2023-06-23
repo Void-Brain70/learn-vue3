@@ -1,10 +1,10 @@
 <template>
     <div>
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent>
             <input type="text" placeholder="Add todo" v-model="newTodo" />
-            <button>Add</button>
+            <button @click="handleSubmit">Add</button>
         </form>
-        {{ newTodo }}
+        {{ addTodo }}
     </div>
 </template>
 
@@ -12,23 +12,23 @@
 import { ref } from 'vue';
 import { useTodoStore } from '../store/todo';
 
-const todoStore = useTodoStore();
-
+const {addTodo} = useTodoStore();
 const newTodo = ref('');
 
-const handleSubmit = ()=> {
-    if (newTodo.value.length > 0){
-        todoStore.addTodo({
-            name: newTodo.value,
-            fav: false,
-            id: Math.floor(Math.random() * 10000) 
-        })
+const handleSubmit = () => {
+    const fromData =
+    {
+        name: newTodo.value,
+        fav: false,
+        id: Math.floor(Math.random() * 10000)
+    }
+    if (newTodo.value.length > 0) {
+        addTodo(fromData)
         newTodo.value = ''
-    }   
+        console.log(dataStore)
+    }
 }
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
