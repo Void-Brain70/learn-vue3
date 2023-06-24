@@ -6,6 +6,7 @@
            <i @click="todoStore.toggleFav(todo.id)"
            :class="{ active: todo.fav }"  
            class="material-icons">favorite</i>
+           <i class="material-icons">edit</i>
         </div>
     </div>
 </template>
@@ -17,8 +18,6 @@ const props = defineProps({
 })
 
 const todoStore = useTodoStore()
-
-
 
 
 </script>

@@ -4,8 +4,8 @@ import { defineStore } from "pinia";
 export const useTodoStore = defineStore('todo',{
     state: ()=> ({
         todo: [
-            { id:1, name:"Anik Das", fav:true },
-            { id:2, name:"koyel Das", fav:false }
+            { id:1, name:"Vue", fav:true },
+            { id:2, name:"Nuxt", fav:false }
         ],
         name: "pinia"
     }),
