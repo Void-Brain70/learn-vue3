@@ -43,21 +43,30 @@
 <!--</div>-->
 
 <!--For BOM popup -->
-<div id="confirm"></div>
-<div id="prompt"></div>
+<!--<div id="confirm"></div>-->
+<!--<div id="prompt"></div>-->
 
+<!--<div>-->
+<!--    <button onclick="showAlert()">Show Alert</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <button onclick="showConfirm()">Show Confirm</button>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <button onclick="showPrompt()">Show Prompt</button>-->
+<!--</div>-->
+
+<!--For BOM Cookie-->
 <div>
-    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="setCookie('name', 'Anik Das', 3)">Set Cookie</button>
 </div>
 
 <div>
-    <button onclick="showConfirm()">Show Confirm</button>
+    <button onclick="alert(getCookie('name'))">Get Cookie</button>
 </div>
 
-<div>
-    <button onclick="showPrompt()">Show Prompt</button>
-</div>
-
-<script src="BOM/bomPrompt.js"></script>
+<script src="BOM/bomCookie.js"></script>
 </body>
 </html>
