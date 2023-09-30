@@ -21,3 +21,14 @@ console.log(r);
 
 //Array find() method
 const arr = ['CSE','EEE','ME','BBA'];
+let result = arr.find(function (currentValue){
+  return currentValue === 'ME';
+})
+console.log(result);
+
+//Array findIndex() method
+const arr2 = [1,2,3,4,5,6,7];
+const res = arr2.findIndex((currentValue)=>{
+    return currentValue >10
+})
+console.log(res)
